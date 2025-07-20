@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: linear-gradient(to right,
+    #0a1e0a 0%,
+    #0a1e0a 45%,
+    #f5b6dc 55%,
+    #bae6fd 100%
+  );
+  transition: all 0.8s ease;
+}
+
+.lado-esquerdo, .lado-direito {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nome {
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: all 0.5s ease;
+}
+
+#nomeDavi {
+  color: #c4f0c5;
+}
+
+#nomeDebora {
+  color: #ffadd6;
+}
+
+.cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5rem;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.question {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.question p {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.botoes button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btnSim {
+  background-color: #14532d;
+  color: white;
+}
+
+#btnNao {
+  background-color: #f472b6;
+  color: white;
+}
+
+#btnSim.glow {
+  box-shadow: 0 0 10px 3px #22c55e;
+}
+
+.tela-final {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.digitando {
+  font-size: 2rem;
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+}
+
+.digitando-padrao {
+  font-size: 1.2rem;
+  color: #fbcfe8;
+  display: none;
+}
+
+.pedido {
+  display: none;
+  background-color: black;
+  color: #f9a8d4;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.pedido-texto {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: growText 3s ease-in-out forwards;
+}
+
+.botoes-finais {
+  display: flex;
+  gap: 20px;
+}
+
+.final-btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: white;
+  color: #f9a8d4;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.creditos {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  color: #ffeb3b;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  white-space: pre-wrap;
+  overflow: hidden;
+  z-index: 15;
+}
+
+.easter-egg {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+@keyframes growText {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes starWarsScroll {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -200%;
+  }
+}
